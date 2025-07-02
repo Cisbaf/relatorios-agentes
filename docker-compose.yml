@@ -1,0 +1,8 @@
+
+
+services:
+  api_relatorios:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
