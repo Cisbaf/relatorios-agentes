@@ -23,9 +23,9 @@ class EventController(BaseModel):
 
     def execute(self):
         data = {}
-        events = [self._get_event_(event) for event in self.events]
         for agent_id in self.agents_id:
             agent_data = {}
+            events = [self._get_event_(event) for event in self.events]
             status_list = [StatusEvent.build_from_dict(register) for register in
                 execute_query_filter_date(agent_id, self.date_rage)]
             for status in status_list:
