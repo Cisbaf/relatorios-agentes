@@ -24,6 +24,7 @@ class RemovedService(EventRepository):
         
     def extract(self, event):
         return {
-            "number_call": event.extra["number_call"]
+            "number_call": event.extra["number_call"],
+            "date": event.status.dt_status_agent.strftime("%d/%m/%Y, %H:%M:%S")
         }
         
